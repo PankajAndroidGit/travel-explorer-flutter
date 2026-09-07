@@ -23,31 +23,11 @@ class HotelsScreen extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(AppRadius.md),
-            child: Image.network(
-              property.imageUrl,
+            child: Image.asset(
+              'assets/images/toronto.jpg',
               height: 280,
               width: double.infinity,
               fit: BoxFit.cover,
-              loadingBuilder: (context, child, progress) {
-                if (progress == null) return child;
-                return Container(
-                  height: 280,
-                  color: AppColors.surfaceElevated,
-                  child: const Center(
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                );
-              },
-              errorBuilder: (context, error, stackTrace) => Container(
-                height: 280,
-                color: AppColors.surfaceElevated,
-                child: const Center(
-                  child: Icon(Icons.image_not_supported_outlined, color: AppColors.textMuted),
-                ),
-              ),
             ),
           ),
           Padding(
@@ -60,7 +40,7 @@ class HotelsScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: 20,
                       backgroundColor: AppColors.surfaceElevated,
-                      backgroundImage: NetworkImage(property.hostAvatarUrl),
+                      backgroundImage: AssetImage('assets/images/avatar.jpg'),
                     ),
                     const SizedBox(width: AppSpacing.sm),
                     Expanded(
