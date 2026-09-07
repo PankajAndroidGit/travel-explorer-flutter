@@ -5,10 +5,10 @@ import '../theme/app_text_styles.dart';
 
 class NavItemData {
   final IconData? icon;
-  final String? avatarUrl; // used instead of icon for the profile tab
+  final bool isAvatar; // true = show the local avatar image instead of an icon
   final String label;
 
-  const NavItemData({this.icon, this.avatarUrl, required this.label});
+  const NavItemData({this.icon, this.isAvatar = false, required this.label});
 }
 
 /// Bottom navigation bar with a pill-shaped highlight on the active item,
@@ -27,7 +27,7 @@ class AppBottomNavBar extends StatelessWidget {
       NavItemData(icon: Icons.home_rounded, label: 'Dashboard'),
       NavItemData(icon: Icons.flight_rounded, label: 'Hotels Resort'),
       NavItemData(icon: Icons.calendar_month_rounded, label: 'Booking Hotel'),
-      NavItemData(avatarUrl: 'https://i.pravatar.cc/150?img=5', label: 'Account'),
+      NavItemData(isAvatar: true, label: 'Account'),
     ],
   });
 
@@ -99,11 +99,11 @@ class _LeadingVisual extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (data.avatarUrl != null) {
-      return CircleAvatar(
+    if (data.isAvatar) {
+      return const CircleAvatar(
         radius: 11,
         backgroundColor: AppColors.surfaceElevated,
-        backgroundImage: NetworkImage(data.avatarUrl!),
+        backgroundImage: AssetImage('assets/images/avatar.jpg'),
       );
     }
     return Icon(

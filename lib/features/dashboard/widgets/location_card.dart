@@ -32,21 +32,9 @@ class LocationCard extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 16 / 10,
-              child: Image.network(
+              child: Image.asset(
                 location.imageUrl,
                 fit: BoxFit.cover,
-                loadingBuilder: (context, child, progress) {
-                  if (progress == null) return child;
-                  return Container(
-                    color: AppColors.surfaceElevated,
-                    child: const Center(
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: AppColors.primary,
-                      ),
-                    ),
-                  );
-                },
                 errorBuilder: (context, error, stackTrace) => Container(
                   color: AppColors.surfaceElevated,
                   child: const Center(

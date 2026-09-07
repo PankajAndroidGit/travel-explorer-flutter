@@ -20,7 +20,7 @@ class TravelExplorerApp extends StatelessWidget {
         primaryColor: AppColors.primary,
         useMaterial3: true,
       ),
-           home: MainShell(),
+           home: const MainShell(),
     );
   }
 }

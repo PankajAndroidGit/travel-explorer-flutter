@@ -23,7 +23,7 @@ final List<LocationModel> sampleLocations = [
   const LocationModel(
     id: '1',
     name: 'Toronto, Canada',
-    imageUrl: 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f',
+    imageUrl: 'assets/images/toronto.jpg',
     distance: '150KM',
     availableDate: 'OCT 24-25',
     price: 50.00,
@@ -31,7 +31,7 @@ final List<LocationModel> sampleLocations = [
   const LocationModel(
     id: '2',
     name: 'Banff, Canada',
-    imageUrl: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce',
+    imageUrl: 'assets/images/banff.jpg',
     distance: '210KM',
     availableDate: 'NOV 02-04',
     price: 75.00,
@@ -39,7 +39,7 @@ final List<LocationModel> sampleLocations = [
   const LocationModel(
     id: '3',
     name: 'Vancouver, Canada',
-    imageUrl: 'https://images.unsplash.com/photo-1560814304-4f05b62af116',
+    imageUrl: 'assets/images/vancouver.jpg',
     distance: '95KM',
     availableDate: 'OCT 30-31',
     price: 62.00,

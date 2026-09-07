@@ -29,7 +29,7 @@ class AppDrawerMenu extends StatelessWidget {
     super.key,
     this.userName = 'Alice Premium',
     this.userLocation = 'Toronto, Canada',
-    this.avatarUrl = 'https://i.pravatar.cc/150?img=5',
+    this.avatarUrl = 'assets/images/avatar.jpg',
   });
 
   @override
@@ -48,9 +48,9 @@ class AppDrawerMenu extends StatelessWidget {
               onClose: () => Navigator.of(context).pop(),
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Section(
+            const _Section(
               title: 'Account Setting',
-              items: const [
+              items: [
                 MenuItemData(icon: Icons.notifications_outlined, label: 'Notification', badgeCount: 12),
                 MenuItemData(icon: Icons.payment_outlined, label: 'Payment', isActive: true),
                 MenuItemData(icon: Icons.translate_outlined, label: 'Translate'),
@@ -58,17 +58,17 @@ class AppDrawerMenu extends StatelessWidget {
               ],
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Section(
+            const _Section(
               title: 'Account Setting',
-              items: const [
+              items: [
                 MenuItemData(icon: Icons.list_alt_outlined, label: 'Listing'),
                 MenuItemData(icon: Icons.home_work_outlined, label: 'Host'),
               ],
             ),
             const SizedBox(height: AppSpacing.lg),
-            _Section(
+            const _Section(
               title: 'Account Setting',
-              items: const [
+              items: [
                 MenuItemData(icon: Icons.dark_mode_outlined, label: 'Dark Mode'),
                 MenuItemData(icon: Icons.system_update_alt_outlined, label: 'Update'),
               ],
@@ -100,7 +100,7 @@ class _Header extends StatelessWidget {
         CircleAvatar(
           radius: 22,
           backgroundColor: AppColors.surfaceElevated,
-          backgroundImage: NetworkImage(avatarUrl),
+          backgroundImage: AssetImage(avatarUrl),
         ),
         const SizedBox(width: AppSpacing.sm),
         Expanded(
